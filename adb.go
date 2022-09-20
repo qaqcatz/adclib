@@ -28,7 +28,7 @@ type AdbS struct {
 //
 // - httpForwardPort, forward tcp:HttpForwardPort(host port) tcp:guest port.
 // An avd can only have one forwarding port.
-// If there are multiple guest ports, you should implement port forwarding within the emulator yourself.
+// If there are multiple guest ports, you should implement port forwarding inside the device yourself.
 // If you do not want to use Http, just set any value.
 func NewAdbS(adbPath string, device string, ip string, httpForwardPort string) *AdbS {
 	return &AdbS{AdbPath: adbPath, Device: device, Ip: ip, HttpForwardPort: httpForwardPort}

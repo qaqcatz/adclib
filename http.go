@@ -10,9 +10,9 @@ import (
 
 // HttpForward: forward tcp: HttpForwardPort tcp:guestPort, then forward the http request serially.
 // An avd can only have one forwarding port.
-// If there are multiple guest ports, you should implement port forwarding inside the emulator yourself.
+// If there are multiple guest ports, you should implement port forwarding inside the device yourself.
 //
-// - guestPort. guest port inside the emulator
+// - guestPort. guest port inside the device
 //
 // - method, request method, only support GET and POST.
 //

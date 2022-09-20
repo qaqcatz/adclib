@@ -45,7 +45,7 @@ NewAdbS: create an AdbS object.
 - adbPath, e.g. /home/hzy/Android/Sdk/platform-tools/adb
 - device, e.g. emulator-5554
 - ip, avd's ip, usually 127.0.0.1
-- httpForwardPort, forward tcp:HttpForwardPort(host port) tcp:guest port. An avd can only have one forwarding port. If there are multiple guest ports, you should implement port forwarding within the emulator yourself. If you do not want to use Http, just set any value.
+- httpForwardPort, forward tcp:HttpForwardPort(host port) tcp:guest port. An avd can only have one forwarding port. If there are multiple guest ports, you should implement port forwarding within the device yourself. If you do not want to use Http, just set any value.
 
 ### Exec
 
@@ -116,9 +116,9 @@ func (adbs *AdbS) HttpForward(guestPort string, method string, paramUrl string, 
 ```
 
 
-HttpForward: forward tcp: HttpForwardPort tcp:guestPort, then forward the http request serially. An avd can only have one forwarding port. If there are multiple guest ports, you should implement port forwarding inside the emulator yourself.
+HttpForward: forward tcp: HttpForwardPort tcp:guestPort, then forward the http request serially. An avd can only have one forwarding port. If there are multiple guest ports, you should implement port forwarding inside the device yourself.
 
-- guestPort. guest port inside the emulator
+- guestPort. guest port inside the device
 - method, request method, only support GET and POST.
 - paramUrl, e.g. (no '/')hello?param1=1&param2=2
 - jsonData, GET: nil, POST: content in json format
