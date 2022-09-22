@@ -115,8 +115,7 @@ func ExampleAdbS_Exec_timeout() {
 func (adbs *AdbS) HttpForward(guestPort string, method string, paramUrl string, jsonData []byte, timeoutMS int) (int, []byte, error)
 ```
 
-
-HttpForward: forward tcp: HttpForwardPort tcp:guestPort, then forward the http request serially. An avd can only have one forwarding port. If there are multiple guest ports, you should implement port forwarding inside the device yourself.
+HttpForward: forward tcp: HttpForwardPort tcp:guestPort, then forward the http request serially. An avd can only have one forwarding port. If there are multiple guest ports, you can just change the port directly,because HttpForward is serial, we can automatically perform port mapping before each forwarding.
 
 - guestPort. guest port inside the device
 - method, request method, only support GET and POST.
